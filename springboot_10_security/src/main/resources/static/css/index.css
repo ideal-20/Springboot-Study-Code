@@ -1,0 +1,8 @@
+.column > p {
+    line-height: 30px;
+    margin-left: 40px;
+}
+
+.ui info message {
+    text-align: center;
+}

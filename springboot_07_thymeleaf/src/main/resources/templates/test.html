@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+<h2>测试成功</h2>
+
+<!--/*@thymesVar id="hello" type="java.lang.String"*/-->
+<!--<p th:utext="'接收到的数据: ' + ${hello}">55555</p>-->
+
+<!--<p> <span th:text=" '学生姓名: ' + ${student.name}"></span> </p>-->
+<!--<p> <span th:text=" |姓名: ${student.name}|"></span> </p>-->
+
+<!--<p>学生姓名: <span th:text="${student.name}"></span> </p>-->
+<!--<p>学生年龄: <span th:text="${student.age}"></span> </p>-->
+<!--<p>课程名: <span th:text="${student.course.name}"></span> </p>-->
+<!--<p>授课老师: <span th:text="${student.course.teacher}"></span> </p>-->
+
+<!--<h5 th:object="${student}">-->
+<!--<p>学生姓名: <span th:text="*{name}"></span> </p>-->
+<!--<p>学生年龄: <span th:text="*{age}"></span> </p>-->
+<!--<p>课程名: <span th:text="*{course.name}"></span> </p>-->
+<!--<p>授课老师: <span th:text="*{course.teacher}"></span> </p>-->
+<!--</h5>-->
+
+<!--<p>学生年龄 = <span th:text="${student.age} "></span> </p>-->
+<!--<p>学生年龄 / 2 = <span th:text="${student.age} / 2 "></span> </p>-->
+<!--<p>学生年龄 % 2 = <span th:text="${student.age} % 2 "></span> </p>-->
+
+<!--<p>学生姓名: <span th:text="${student.name}"></span> </p>-->
+<!--<p>学生姓名为张三 = <span th:text="${student.name} == '张三'"></span> </p>-->
+
+<!--<p>学生年龄为 25 = <span th:text="${student.age} == 25 "></span> </p>-->
+<!--<p>学生年龄 % 2 为 0 = <span th:text="${student.age} % 2 == 0 "></span> </p>-->
+
+<!--<p>学生姓名 = <span th:text="${student.name} == '张三' ? '是张三':'不是张三'"></span> </p>-->
+
+<!--<p>学生是否成年: <span th:if="${student.age} >= 18 ">成年</span> </p>-->
+
+<!--<p>学生是否成年: <span th:unless="${student.age} >= 18 ">成年</span> </p>-->
+
+<!--<div th:switch="${student.name}">-->
+<!--<p th:case="张三">姓名: 张三</p>-->
+<!--<p th:case="李四">姓名: 李四</p>-->
+<!--<p th:case="王五">姓名: 王五</p>-->
+<!--<p th:case="*">姓名: 未找到</p>-->
+<!--</div>-->
+
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr th:each="user : ${userList}">
+    <td th:text="${user.nickname}">NULL</td>
+    <td th:text="${user.age}">0</td>
+  </tr>
+</table>
+
+
+<!--<table border="1">-->
+<!--<tr>-->
+<!--<th>昵称</th>-->
+<!--<th>年龄</th>-->
+<!--<th>index</th>-->
+<!--<th>count</th>-->
+<!--<th>size</th>-->
+<!--<th>current.nickname</th>-->
+<!--<th>even</th>-->
+<!--<th>odd</th>-->
+<!--<th>first</th>-->
+<!--<th>last</th>-->
+<!--</tr>-->
+<!--<tr th:each="user,userStat : ${userList}">-->
+<!--<td th:text="${user.nickname}">nickname</td>-->
+<!--<td th:text="${user.age}">age</td>-->
+<!--<th th:text="${userStat.index}">index</th>-->
+<!--<th th:text="${userStat.count}">count</th>-->
+<!--<th th:text="${userStat.size}">size</th>-->
+<!--<th th:text="${userStat.current.nickname}">current.nickname</th>-->
+<!--<th th:text="${userStat.even}">even</th>-->
+<!--<th th:text="${userStat.odd}">odd</th>-->
+<!--<th th:text="${userStat.first}">first</th>-->
+<!--<th th:text="${userStat.last}">last</th>-->
+<!--</tr>-->
+<!--</table>-->
+
+<!--<p>现在时间: <span th:text="${#dates.format(currentTime,'yyyy-MM-dd hh:mm:ss')}">2020-05-19 00:00:00</span></p>-->
+
+<!--<input th:value = "${student.name}" />-->
+
+<!--<form id="login-form" th:action="@{/testLogin}" th:object="${loginUser}">-->
+
+<!--<input type="text" value="" th:field="*{username}"></input>-->
+<!--<input type="text" value="" th:field="*{password}"></input>-->
+<!--<input type="submit" value="提交" />-->
+<!--<span th:text="${msg}"></span>-->
+
+<!--</form>-->
+
+<!--<select>-->
+<!--<option th:selected="${student.name} == '张三'"></option> 若相等就默认选中此<option></option>-->
+<!--</select>-->
+
+</body>
+</html>

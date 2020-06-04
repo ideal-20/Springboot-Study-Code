@@ -1,0 +1,42 @@
+#user1:
+#  name: Steven
+#  age: 20
+#  address: 北京
+#
+#
+#student:
+#  name: Steven
+#  age: 20
+#  birthday: 2020/01/01
+#  graduate: false
+#  score: {math: 90, english: 88}
+#  subject:
+#    - 高数
+#    - 大英
+#    - 大物
+#  u:
+#    name: Jack
+#    age: 30
+#    address: 北京
+
+
+server:
+  port: 8081
+#选择要激活那个环境块
+spring:
+  profiles:
+    active: prod
+
+---
+server:
+  port: 8083
+spring:
+  profiles: dev #配置环境的名称
+
+
+---
+
+server:
+  port: 8084
+spring:
+  profiles: prod  #配置环境的名称
