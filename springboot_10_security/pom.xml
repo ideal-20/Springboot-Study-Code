@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.ideal</groupId>
-    <artifactId>springboot_11_security_mysql</artifactId>
+    <artifactId>springboot_10_security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot_11_security_mysql</name>
+    <name>springboot_10_security</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

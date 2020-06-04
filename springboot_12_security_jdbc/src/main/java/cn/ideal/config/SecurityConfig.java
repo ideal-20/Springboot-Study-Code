@@ -25,36 +25,36 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                .anyRequest().authenticated()
-//                .and().formLogin();
-//                .and().httpBasic();
-
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/levelA/**").hasRole("vip1")
-                .antMatchers("/levelB/**").hasRole("vip2")
-                .antMatchers("/levelC/**").hasRole("vip3")
-                .and().formLogin();
+                .antMatchers("/levelA/**").hasAnyRole("USER","ADMIN","SUPER_ADMIN")
+                .antMatchers("/levelB/**").hasAnyRole("ADMIN","SUPER_ADMIN")
+                .antMatchers("/levelC/**").hasRole("SUPER_ADMIN")
+                .and().formLogin()
 
-
-//                .usernameParameter("username")
-//                .passwordParameter("password")
-//                .loginPage("/toLoginPage")
-//                .loginProcessingUrl("/login"); // 登陆表单提交请求
-
-//        http.csrf().disable();//关闭csrf功能:跨站请求伪造,默认只能通过post方式提交logout请求
-//        http.logout().logoutSuccessUrl("/");
-//        //记住我
-//        http.rememberMe();
+                // 登陆表单提交请求
+                .and().formLogin()
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .loginPage("/toLoginPage")
+                .loginProcessingUrl("/login")
+                //注销
+                .and().logout().logoutSuccessUrl("/")
+                //记住我
+                .and().rememberMe().rememberMeParameter("remember")
+                //关闭csrf功能:跨站请求伪造,默认只能通过post方式提交logout请求
+                .and().csrf().disable();
     }
 
 
+    //定义认证规则
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery("select username,password,roles from student where username = ?")
-                .authoritiesByUsernameQuery("select username, roles from student where username = ?")
+
+        auth.jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery("select username,password,true from user where username = ?")
+                .authoritiesByUsernameQuery("select username,roles from user where username = ?")
                 .passwordEncoder(new PasswordEncoder() {
                     @Override
                     public String encode(CharSequence rawPassword) {
