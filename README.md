@@ -35,3 +35,13 @@ https://juejin.im/post/5ecb15eb51882543143747c0
 (六) SpringBoot起飞之路-整合JdbcTemplate-Druid-MyBatis-Redis
 
 https://juejin.im/post/5ed99bb751882543012fa3d0
+
+
+(七) SpringBoot起飞之路-整合SpringSecurity
+
+https://juejin.im/post/5ef7f990f265da22e425c9fa
+
+(八) SpringBoot起飞之路-整合Shiro详细教程（MyBatis、Thymeleaf）
+
+https://juejin.im/post/5f0bbda26fb9a07e8b2147b3
+
