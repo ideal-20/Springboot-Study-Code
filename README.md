@@ -31,3 +31,7 @@ https://juejin.im/post/5ebe453f6fb9a0437c394710
 (五) SpringBoot起飞之路-Thymeleaf模板引擎整合及基本用法总结
 
 https://juejin.im/post/5ecb15eb51882543143747c0
+
+(六) SpringBoot起飞之路-整合JdbcTemplate-Druid-MyBatis-Redis
+
+https://juejin.im/post/5ed99bb751882543012fa3d0
