@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.ideal.mapper.UserMapper">
 
-    <select id="queryUserByUid" parameterType="Integer" resultType="cn.ideal.pojo.User">
+    <select id="queryUserByUid" parameterType="Integer" resultType="cn.ideal.pojo.UserPojo">
          select * from user where uid = #{uid}
     </select>
-    <select id="queryUserByUserName" parameterType="String" resultType="cn.ideal.pojo.User">
+    <select id="queryUserByUserName" parameterType="String" resultType="cn.ideal.pojo.UserPojo">
          select * from user where username = #{username}
     </select>
 

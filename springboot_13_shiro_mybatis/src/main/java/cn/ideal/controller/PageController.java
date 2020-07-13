@@ -45,4 +45,16 @@ public class PageController {
         return "views/L-C/" + name;
     }
 
+
+    @RequestMapping("/unauthorized")
+    public String toUnauthorizedPage() {
+        return "views/unauthorized";
+    }
+
+    @RequestMapping("/success")
+    public String toSuccessPage() {
+        return "views/success";
+    }
+
+
 }

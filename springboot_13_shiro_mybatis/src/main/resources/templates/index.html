@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<!--xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">-->
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <title>首页</title>
+  <!--semantic-ui-->
+  <link
+          href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css"
+          rel="stylesheet"
+  />
+
+  <link th:href="@{/css/index.css}" rel="stylesheet">
+  <!--<link href="css/index.css" rel="stylesheet">-->
+
+</head>
+<body>
+<div class="ui container">
+  <div class="ui secondary menu">
+    <a class="active item" th:href="@{/index}">
+      首页
+    </a>
+
+    <a class="active item" th:href="@{/about}">
+      关于
+    </a>
+    <!--登录注销-->
+    <div class="right menu">
+
+      <!--如果未登录-->
+      <!--<div shiro:authorize="!isAuthenticated()">-->
+      <div shiro:notAuthenticated="">
+        <a class="item" th:href="@{/toLoginPage}">
+          <i class="address card icon"></i> 登录
+        </a>
+      </div>
+
+      <!--如果已登录-->
+      <div shiro:authenticated="">
+        <a class="item">
+          <i class="address card icon"></i>
+          用户名：<span shiro:principal></span>
+          <!--角色：<span sec:authentication="principal.authorities"></span>-->
+        </a>
+      </div>
+
+      <div shiro:authenticated="">
+        <a class="item" th:href="@{/logout}">
+          <i class="address card icon"></i> 注销
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui stackable three column grid">
+    <div class="column" shiro:hasAnyRoles="USER,ADMIN,SUPER_ADMIN">
+      <div class="ui raised segments">
+        <div class="ui segment">
+          <a th:href="@{/levelA/a}">L-A-a</a>
+        </div>
+        <div class="ui segment">
+          <a th:href="@{/levelA/b}">L-A-b</a>
+        </div>
+        <div class="ui segment">
+          <a th:href="@{/levelA/c}">L-A-c</a>
+        </div>
+      </div>
+    </div>
+    <div class="column" shiro:hasAnyRoles="ADMIN,SUPER_ADMIN">
+      <div class="ui raised segments">
+        <div class="ui segment">
+          <a th:href="@{/levelB/a}">L-B-a</a>
+        </div>
+        <div class="ui segment">
+          <a th:href="@{/levelB/b}">L-B-b</a>
+        </div>
+        <div class="ui segment">
+          <a th:href="@{/levelB/c}">L-B-c</a>
+        </div>
+      </div>
+    </div>
+    <div class="column" shiro:hasRole="SUPER_ADMIN">
+      <div class="ui raised segments">
+        <div class="ui segment">
+          <a th:href="@{/levelC/a}">L-C-a</a>
+        </div>
+        <div class="ui segment">
+          <a th:href="@{/levelC/b}">L-C-b</a>
+        </div>
+        <div class="ui segment">
+          <a th:href="@{/levelC/c}">L-C-c</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="column"></div> -->
+  </div>
+
+  <div class="ui stacked segment">
+    <div class="ui stackable three column grid">
+      <div class="column">
+        <p>
+          晚风吹起你鬓间的白发<br/>
+          抚平回忆留下的疤<br/>
+          你的眼中 明暗交杂 一笑生花<br/>
+          暮色遮住你蹒跚的步伐<br/>
+          走进床头藏起的画<br/>
+          画中的你 低着头说话<br/>
+          我仍感叹于世界之大
+        </p>
+      </div>
+
+      <div class="column">
+        <p>
+
+          也沉醉于儿时情话<br/>
+          不剩真假 不做挣扎 无谓笑话<br/>
+          我终将青春还给了她<br/>
+          连同指尖弹出的盛夏<br/>
+          心之所动 就随风去了<br/>
+          以爱之名 你还愿意吗<br/>
+          ❤
+        </p>
+      </div>
+      <div class="column">
+        <img class="ui medium circular image" src="images/001.jpg">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ui info message">
+    <div class="header">理想二旬不止</div>
+    <p>BWH_Steven</p>
+  </div>
+</div>
+
+<!-- <script th:src="@{js/jquery-3.1.1.min.js}"></script> -->
+<script src="js/jquery-3.1.1.min.js"></script>
+</body>
+</html>
