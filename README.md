@@ -2,7 +2,7 @@
 
 # 详细文章内容可以访问我的博客或者公众号：www.ideal-20.cn
 
-# 更多技术干货，Java系列学习文章的话，可以关注我的公众号：理想二旬不止
+# 更多技术干货，Java系列学习文章的话，可以扫描图片二维码，关注我的公众号：理想二旬不止
 
 > 在这里的我们素不相识，却都在为了自己的梦而努力 ❤
 >
@@ -35,3 +35,13 @@ https://juejin.im/post/5ecb15eb51882543143747c0
 (六) SpringBoot起飞之路-整合JdbcTemplate-Druid-MyBatis-Redis
 
 https://juejin.im/post/5ed99bb751882543012fa3d0
+
+
+(七) SpringBoot起飞之路-整合SpringSecurity
+
+https://juejin.im/post/5ef7f990f265da22e425c9fa
+
+(八) SpringBoot起飞之路-整合Shiro详细教程（MyBatis、Thymeleaf）
+
+https://juejin.im/post/5f0bbda26fb9a07e8b2147b3
+
